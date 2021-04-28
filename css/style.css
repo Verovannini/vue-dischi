@@ -28,6 +28,19 @@ main{
     font-family: 'Roboto', sans-serif;
 }
 
+/* Filter */
+.filter-select{
+    text-align: center;
+    padding-top: 20px;
+    color: #fff;
+}
+.filter-select select{
+    padding: 5px 10px;
+    border: 0;
+    border-radius: 5px;
+}
+
+/* Albums Wrapper */
 .albums-wrapper{
     padding: 50px 0;
     display: flex;
@@ -41,6 +54,7 @@ main{
     margin-bottom: 20px;
 }
 
+/* Single Album */
 .album-container .album{
     background-color: #2e3b46;
     padding: 15px;
@@ -50,6 +64,7 @@ main{
     width: 100%;
     display: block;
 }
+
 .album-container .album .album-info{
     text-align: center;
 }
