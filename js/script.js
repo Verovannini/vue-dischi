@@ -24,6 +24,11 @@ var app = new Vue (
                 this.filteredAlbumsList = this.albumsList.filter((element) => {
                     return element.genre == this.selected;
                 });
+
+                if ( this.selected == '') {
+                    this.filteredAlbumsList = this.albumsList;
+                    return this.filteredAlbumsList;
+                }
             }
         },
         mounted() {
