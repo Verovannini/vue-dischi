@@ -13,10 +13,22 @@ var app = new Vue (
             albumsGenre: [],
 
             // Selected option
-            selected: ''
+            selected: '',
+
+            filteredAlbumsList: []
         },
         methods: {
+            filerByGenre() {
+                this.filteredAlbumsList = this.albumsList.filter((element) => {
+                    return element.genre == this.selected;
+                });
+                console.log(this.filteredAlbumsList);
 
+                if (this.selected != '') {
+                    this.albumsList = this.filteredAlbumsList;
+                }
+                console.log(this.albumsList);
+            }
         },
         mounted() {
             axios
@@ -31,8 +43,6 @@ var app = new Vue (
                             this.albumsGenre.push(element.genre);
                         }
                     });
-
-                    
                 });
         }
     }

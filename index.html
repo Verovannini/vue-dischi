@@ -26,7 +26,7 @@
             <!-- Start Filter Select -->
             <div class="filter-select">
                 <label for="filter-by-genre">Filter by genre</label>
-                <select id="filter-by-genre" v-model="selected">
+                <select id="filter-by-genre" v-model="selected" @change="filerByGenre">
                     <option hidden value="">-- All --</option>
                     <option v-for="genre in albumsGenre" :value="genre">{{ genre }}</option>
                 </select>
