@@ -37,13 +37,14 @@ main{
 
 .album-container{
     padding: 0 10px;
-    width: 150px;
+    width: 180px;
     margin-bottom: 20px;
 }
 
 .album-container .album{
     background-color: #2e3b46;
     padding: 15px;
+    height: 100%;
 }
 .album-container .album img{
     width: 100%;
