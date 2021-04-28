@@ -6,6 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Vue Dischi</title>
 
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.20.0/axios.min.js"></script>
@@ -13,7 +15,34 @@
 </head>
 <body>
     <div id="root">
-        
+        <!-- START HEADER -->
+        <header>
+            <img src="img/download.png" alt="Spotify Logo">
+        </header>
+        <!-- END HEADER -->
+
+        <!-- START MAIN -->
+        <main>
+            <div class="albums-wrapper">
+                
+                <!-- Start Single Album -->
+                <div v-for="number in 10" class="album-container">
+                    <div class="album">
+                        <img src="https://images-na.ssl-images-amazon.com/images/I/41JD3CW65HL.jpg" alt="">
+
+                        <div class="album-info">
+                            <div class="album-name">NEW JERSEY</div>
+                            <div class="album-artist">
+                                <div>Bon Jovi</div>
+                                <div>1988</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- End Single Album -->
+            </div>
+        </main>
+        <!-- END MAIN -->
     </div>
 
 

@@ -1,0 +1,63 @@
+/* RESET */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+/* END RESET */
+
+/* COMMON */
+/* END COMMON */
+
+/* HEADER */
+header{
+    background-color: #2e3b46;
+    padding: 10px 20px;
+}
+header img{
+    width: 30px;
+    display: block;
+}
+/* END HEADER */
+
+/* MAIN */
+main{
+    background-color: #1e2e3d;
+    height: calc( 100vh - 50px );
+    overflow: auto;
+    font-family: 'Roboto', sans-serif;
+}
+
+.albums-wrapper{
+    padding: 50px 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.album-container{
+    padding: 0 10px;
+    width: 150px;
+    margin-bottom: 20px;
+}
+
+.album-container .album{
+    background-color: #2e3b46;
+    padding: 15px;
+}
+.album-container .album img{
+    width: 100%;
+    display: block;
+}
+.album-container .album .album-info{
+    text-align: center;
+}
+.album-container .album .album-info .album-name{
+    color: #fff;
+    padding: 20px 0;
+}
+.album-container .album .album-info .album-artist{
+    color: #808080;
+    font-size: 12px;
+}
+/* END MAIN */
