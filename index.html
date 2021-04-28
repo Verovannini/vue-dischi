@@ -26,11 +26,10 @@
             <!-- Start Filter Select -->
             <div class="filter-select">
                 <label for="filter-by-genre">Filter by genre</label>
-                <select id="filter-by-genre" v-model="selected" @change="filerByGenre">
+                <select id="filter-by-genre" v-model="selected" @change="filterByGenre">
                     <option hidden value="">-- All --</option>
                     <option v-for="genre in albumsGenre" :value="genre">{{ genre }}</option>
                 </select>
-                <span>selected: {{selected}} </span>
             </div>
             <!-- End Filter Select -->
 
@@ -38,7 +37,7 @@
             <div class="albums-wrapper">
                 
                 <!-- Start Single Album -->
-                <div v-for="album in albumsList" class="album-container">
+                <div v-for="album in filteredAlbumsList" class="album-container">
                     <div class="album">
                         <img :src="album.poster" alt="album.title">
 

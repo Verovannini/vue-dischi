@@ -9,25 +9,21 @@ var app = new Vue (
             // Array che viene popolato dalla chiamata ajax all'API di Boolean
             albumsList: [],
 
-            // Arrau che viene popolato dai generi musicali
+            // Array che viene popolato dai generi musicali
             albumsGenre: [],
 
             // Selected option
             selected: '',
 
+            // Array uguale all'array albumList che viene filtrato quando cambio le option (è quello che stampo in pagina)
             filteredAlbumsList: []
         },
         methods: {
-            filerByGenre() {
+            // Funzione che filtra gli album per genere modificando l'array filteredAlbumsList
+            filterByGenre() {
                 this.filteredAlbumsList = this.albumsList.filter((element) => {
                     return element.genre == this.selected;
                 });
-                console.log(this.filteredAlbumsList);
-
-                if (this.selected != '') {
-                    this.albumsList = this.filteredAlbumsList;
-                }
-                console.log(this.albumsList);
             }
         },
         mounted() {
@@ -36,6 +32,7 @@ var app = new Vue (
                 .then( (response) => {
                     const result = response.data;
                     this.albumsList = result.response;
+                    this.filteredAlbumsList = result.response
 
                     // Itero l'array di album e pusho in un array il genere di ogni album solamente se non è già presente
                     this.albumsList.forEach(element => {
