@@ -19,7 +19,7 @@ var app = new Vue (
             filteredAlbumsList: []
         },
         methods: {
-            // Funzione che filtra gli album per genere modificando l'array filteredAlbumsList
+            // Funzione che filtra gli album per genere modificando l'array filteredAlbumsList che poi verrà stampato
             filterByGenre() {
                 this.filteredAlbumsList = this.albumsList.filter((element) => {
                     return element.genre == this.selected;
@@ -37,7 +37,12 @@ var app = new Vue (
                 .then( (response) => {
                     const result = response.data;
                     this.albumsList = result.response;
-                    this.filteredAlbumsList = result.response
+                    this.filteredAlbumsList = result.response;
+
+                    // Metto gli album in ordine crescente in base all'anno
+                    this.filteredAlbumsList.sort((a,b) => {
+                        return a.year - b.year;
+                    });
 
                     // Itero l'array di album e pusho in un array il genere di ogni album solamente se non è già presente
                     this.albumsList.forEach(element => {
